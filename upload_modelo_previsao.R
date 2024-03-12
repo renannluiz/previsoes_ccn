@@ -4,12 +4,12 @@ library(forecast)
 library(dplyr)
 library("openxlsx")
 # Indicar o caminho dos dados
-dados_series <- read.xlsx("C:/Users/renan/Desktop/dados_series.xlsx")
+dados_series <- read.xlsx("caminho.xlsx")
 # Definição do período da série
 dados_treino1 <- dados_series %>%
   filter(ano_inicial >= 1800 & ano_inicial <= 2000)
 # Defina o assunto para ser previsto
-ts_medicina <- ts(subset(dados_treino1, assunto == "PSIQUIATRIA")$qtd_total_publicacoes, start = min(dados_treino1$ano_inicial), frequency = 1)
+ts_medicina <- ts(subset(dados_treino1, assunto == "ASSUNTO X")$qtd_total_publicacoes, start = min(dados_treino1$ano_inicial), frequency = 1)
 # plot(ts_medicina)
 
 # Parâmetros para experimentação
